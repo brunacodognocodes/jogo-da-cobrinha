@@ -1,0 +1,89 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #071b16, #102d25);
+  color: #f0fff4;
+  font-family: Arial, sans-serif;
+}
+
+.game { width: 100%; max-width: 460px; text-align: center; }
+h1 { color: #54f59a; margin-bottom: 20px; }
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background: #173b30;
+  border-radius: 12px;
+  font-size: 16px;
+}
+.score strong { color: #54f59a; }
+
+.board-wrap { position: relative; width: 100%; aspect-ratio: 1; }
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #0a1713;
+  border: 3px solid #35c878;
+  border-radius: 12px;
+}
+
+.message{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(5, 20, 15, 0.88);
+  border-radius: 12px;
+}
+.message h2 { color: #54f59a; }
+.message p { line-height: 1.5; }
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  background: #36d17b;
+  color: #082017;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+button:active { transform: scale(0.95); }
+
+.controls { margin: 18px 0; }
+.controls div {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+.controls > button { min-width: 60px; }
+.controls div button { width: 60px; height: 48px; }
+
+.restart {
+  background: #234a3c;
+  color: white;
+  border: 1px solid #54f59a;
+}
+.hint { color: #b8d5c7; font-size: 13px; line-height: 1.5; }
+
+@media (max-width: 380px) {
+  h1 { font-size: 24px; }
+  .score { font-size: 14px; }
+}
+.message[hidden] {
+  display: none !important;
+}
